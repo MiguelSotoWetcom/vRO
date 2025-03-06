@@ -1,3 +1,36 @@
 name: MS-Ansible-Workshop 
-version: 4
-inputs: {}
+version: 3
+formatVersion: 1
+inputs:
+  ambiente:
+    type: string
+    title: Indique ambiente
+    enum:
+      - Produccion
+      - QA
+      - Desarrollo
+  userDefinedName:
+    type: string
+    title: Ingrese nombre de VM
+  Playbook:
+    type: string
+    title: Playbook
+resources:
+  Mechine_Frontend:
+    type: Cloud.Machine
+    properties:
+      image: Ubuntu Template
+      flavor: small
+      userDefinedName: ${input.userDefinedName}
+      ambiente: ${input.ambiente}
+      constraints:
+        - tag: compute:poc
+      networks:
+        - network: ${resource.Network_DMZ.id}
+  Network_DMZ:
+    type: Cloud.Network
+    properties:
+      networkType: existing
+      constraints:
+        - tag: net:dmz
+
