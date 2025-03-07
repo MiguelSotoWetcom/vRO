@@ -23,3 +23,7 @@ resources:
         set_hostname: demoname
       networks:
         - network: ${resource.Cloud_Network_1.id}
+  Cloud_Network_1:
+    type: Cloud.Network
+    properties:
+      networkType: existing
