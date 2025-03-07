@@ -1,0 +1,25 @@
+name: 
+version:
+formatVersion: 1
+inputs: {}
+resources:
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    properties:
+      image: MS-WIN-CLOUDBASE-INIT
+      flavor: xlarge
+      remoteAccess:
+        authentication: usernamePassword
+        username: Administrator
+        password: Password123$
+      cloudConfig: |
+        write_files:
+          content: Prueba de escritura
+          path: c:\escritura.txt
+        set_hostname: demoname
+      networks:
+        - network: ${resource.Cloud_Network_1.id}
+  Cloud_Network_1:
+    type: Cloud.Network
+    properties:
+      networkType: existing
