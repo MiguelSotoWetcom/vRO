@@ -15,7 +15,7 @@ resources:
       remoteAccess:
         authentication: usernamePassword
         username: Administrator
-        password: Password123$
+        password: nose$
       cloudConfig: |
         write_files:
           content: Prueba de escritura
