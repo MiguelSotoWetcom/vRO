@@ -1,5 +1,5 @@
 name: TestRepo
-version: 1
+version: 2
 inputs:
   sitio:
     type: string
