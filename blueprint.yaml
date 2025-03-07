@@ -1,2 +1,9 @@
 name: TestRepo
 version: 1
+inputs:
+  sitio:
+    type: string
+    enum:
+      - vcenter
+      - aws
+resources: {}
