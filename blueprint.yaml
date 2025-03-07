@@ -1,5 +1,5 @@
 name: TestRepo
-version: 3
+version: 4
 inputs:
   sitio:
     type: string
@@ -11,7 +11,7 @@ resources:
     type: Cloud.Machine
     properties:
       image: MS-WIN-CLOUDBASE-INIT
-      flavor: xlarge
+      flavor: small
       remoteAccess:
         authentication: usernamePassword
         username: Administrator
